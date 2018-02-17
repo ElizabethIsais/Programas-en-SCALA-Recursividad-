@@ -1,0 +1,54 @@
+object FuncionesRecursivas {
+  
+  //Sumatoria de enteros desde un limite inferior hasta un limite superior
+  def sumaEnterosConLimiteIterativa(li:Int, ls:Int) : Int = {
+    var sumatoria = 0
+    var inicio = li
+    var fin = ls
+    
+    while(inicio <= fin){
+      sumatoria = sumatoria + (inicio)
+      inicio = inicio +1
+    }
+    sumatoria
+  }
+  
+    //Sumatoria de enteros desde un limite inferior hasta un limite superior
+  def sumaEnterosConLimiteRecursiva(li:Int, ls:Int): Int = {
+   var sumatoria = 0
+    while(li <= ls){
+      return sumatoria + sumaEnterosConLimiteRecursiva(li+1, ls)
+    } 
+   sumatoria
+  }
+  
+  //Funcion Iterativa
+  //Sumatoria desde 0 hasta N
+  def sumatoriaEnterosIterativa(num:Int):Int = {
+    var sumatoria = 0
+    var lim = 0;
+    while(lim <= num ){
+      sumatoria = sumatoria + lim
+      lim = lim+1
+    }
+    sumatoria
+  }
+  
+ 
+  //Funcion Recursiva
+  def sumatoriaEnteros(numero: Int):Int = {
+    if(numero == 0)
+      0
+    else
+      return numero + sumatoriaEnteros(numero-1)
+  }
+  
+  
+  def main(args: Array[String]): Unit = {
+    //println(sumatoriaEnteros(10))
+    //println(sumatoriaEnterosIterativa(10))
+    //println(sumaEnterosConLimiteIterativa(5, 8))
+    println(sumaEnterosConLimiteRecursiva(5, 8))
+  }
+  
+}
